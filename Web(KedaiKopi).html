@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>THE REVIGAN'S COFFEE</title>
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!--Feather icons-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
+      integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <!-- My Style -->
+    <link rel="stylesheet" href="css/Web(KedaiKopi).css" />
+    <!--Alpine JS-->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- App -->
+    <script src="src/app.js" async></script>
+  </head>
+  <body>
+    <!--Nav-bar start-->
+    <nav class="navbar" x-data>
+      <a href="#" class="navbar-logo"
+        >REVIG<i class="glyphicon glyphicon-send"></i> N'S
+        <span> COFFEE</span></a
+      >
+      <div class="navbar-nav">
+        <a href="#home">HOME <i class="bi bi-house-door-fill"></i></a>
+        <a href="#about">ABOUT <i class="bi bi-archive-fill"></i></a>
+        <a href="#menu">MENU <i class="bi bi-cup-hot-fill"></i></a>
+        <a href="#products">FAVORITE <i class="bi bi-award-fill"></i></a>
+        <a href="#tugassti">STI <i class="bi bi-book-fill"></i></a>
+        <a href="#contact">CONTACT <i class="bi bi-telephone-fill"></i></a>
+      </div>
+      <div class="navbar-extra">
+        <a href="#" id="search-button"><i class="bi bi-search"></i></a>
+        <a href="#" id="shopping-cart-button" @click.prevent>
+          <i class="bi bi-cart4"></i>
+          <span class="quantity-badge" x-show="$store.cart.quantity" x-text="$store.cart.quantity"></span>
+        </a>
+        <a href="#" id="hamburger-menu" @click.prevent><i class="bi bi-list"></i></a>
+      </div>
+
+      <!-- Search Form Start -->
+      <div class="search-form">
+        <input type="search" id="search-box" placeholder="search here...">
+        <label for="search-box"><i class="bi bi-search"></i></label>
+      </div>
+      <!-- Search Form End-->
+      <!-- Shopping Cart Start -->
+      <div class="shopping-cart">
+        <template x-for="(item ,index) in $store.cart.items" x-keys="index">
+        <div class="cart-item">
+          <img src="img/1.jpg" alt="AMERICANO">
+          <div class="item-detail">
+            <h3 x-text="item.name"></h3>
+            <div class="product-stars">
+              <div class="item-price">
+                <span x-text="rupiah(item.price)"></span> &times;
+                <button id="remove" @click="$store.cart.remove(item.id)">&minus;</button>
+                <span x-text="item.quantity"></span>
+                <button id="add" @click="$store.cart.add(item)">&plus;</button> &equals;
+                <span x-text="rupiah(item.total)"></span>
+              </div>     
+            </div>
+          </div>
+        </div>
+        </template>
+        <h4 x-show="!$store.cart.items.length" style="margin-top: 1rem;">Cart Is Empty</h4>
+        <h4 x-show="$store.cart.items.length">Total: <span x-text="rupiah($store.cart.total)"></span></h4>
+        <div class="form-container" x-show="$store.cart.items.length">
+          <form action="" id="checkoutForm">
+            <input type="hidden" name="items" x-model="JSON.stringify($store.cart.items)">
+            <input type="hidden" name="total" x-model="$store.cart.total">
+            <h5>Customer Detail</h5>
+            <label for="name">
+              <span>Name</span>
+              <input type="text" name="name" id="name">
+            </label>
+            <label for="email">
+              <span>Email</span>
+              <input type="email" name="email" id="email">
+            </label>
+            </label>
+            <label for="phone">
+              <span>Phone</span>
+              <input type="number" name="phone" id="phone" autocomplete="off">
+            </label>
+            <button class="checkout-button disabled" type="submit" id="checkout-button" value="checkout">Checkout</button>
+          </form>
+        </div>
+      </div>
+      <!-- Shopping Cart End -->
+
+    </nav>
+    <!--Nav-bar end-->
+    <!--Hero section start-->
+    <section class="hero" id="home">
+      <main class="content">
+        <h1>Selamat Datang di Revigan's<span> Coffee</span></h1>
+        <p>
+          The First Choice For Exceptional Coffee
+        </p>
+        <a href="#" class="cta">Beli Sekarang</a>
+      </main>
+    </section>
+    <!--Hero section end-->
+
+    <!--About Section start-->
+    <section id="about" class="about">
+      <h2><span>Tentang </span>Kami</h2>
+      <div class="row">
+        <div class="about-img">
+          <img
+            src="img/5a37379a5a2b49.9698197115135681543693.png"
+            alt="About"
+          />
+        </div>
+        <div class="content">
+          <h3>REVIGAN'S<span>COFFEE</span></h3>
+          <p>
+            Revigan's Coffee di dirikan pada 18 Januari 2023 di Semarang.Owner dari Revigan's Coffee yaitu Mahasiswa dari Universitas Nahdlatul Ulama Jepara yang bernama Mohammad Farikhin.
+          </p>
+          <p>
+            Kopi yang dibuat berasal dari kota-kota penghasil kopi terbaik di seluruh indonesia. Sehingga kua litas produk yang di hasilkan di Revigan's Coffee sangat baik.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!--About Section end-->
+
+    <!--Menu Section start-->
+    <section id="menu" class="menu">
+      <h2><span>Menu </span>Kami</h2>
+      <p>
+        Pilihan Menu Yang Ada Di Revigan's Coffee
+      </p>
+      <div class="row">
+        <div class="menu-card">
+          <img src="img/Americano2 (2).jpg" alt="Americano" class="menu-card-img">
+          <h3 class="menu-card-title">AMERICANO</h3>
+          <p>IDR 25K</p>
+        </div>
+        <div class="menu-card">
+          <img src="img/Cappucino2 (2).jpg" alt="Cappucino" class="menu-card-img">
+          <h3 class="menu-card-title">CAPPUCINO</h3>
+          <p>IDR 25K</p>
+        </div>
+        <div class="menu-card">
+          <img src="img/Espresso2 (2).jpg" alt="Espresso" class="menu-card-img">
+          <h3 class="menu-card-title">ESPRESSO</h3>
+          <p>IDR 20K</p>
+        </div>
+        <div class="menu-card">
+          <img src="img/Latte2 (2).jpg" alt="Latte" class="menu-card-img">
+          <h3 class="menu-card-title">LATTE</h3>
+          <p>IDR 25K</p>
+        </div>
+    </section>
+    <!--Menu Section End-->
+
+    <!--Product Section Start-->
+    <section id="products" class="products" x-data="products">
+      <h2><span>Produk</span> Unggulan</h2>
+      <p>Daftar Menu Favorit Di Revigan's Coffee</p>
+      <div class="row">
+        <template x-for="(item, index) in items" x-keys="index">
+        <div class="product-card">
+          <div class="product-icons">
+            <a href="#" @click.prevent="$store.cart.add(item)">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16">
+  <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l.5 2H5V5zM6 5v2h2V5zm3 0v2h2V5zm3 0v2h1.36l.5-2zm1.11 3H12v2h.61zM11 8H9v2h2zM8 8H6v2h2zM5 8H3.89l.5 2H5zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/>
+</svg>
+            </a>
+            <a href="#" class="item-detail-button">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+  <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
+  <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0"/>
+</svg>
+            </a>
+          </div>
+          <div class="product-image">
+            <img src="img/1.jpg" alt="AMERICANO">
+          </div>
+          <div class="product-content">
+            <h3 x-text="item.name"></h3>
+            <div class="product-stars">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+</svg>
+            </div>
+          </div>
+          <div class=" product-price"><span x-text="rupiah(item.price)"></span></div>
+        </div>
+        </template>
+      </div>
+    </section>
+    <!--Product Section End-->
+    <!-- Tugas STI Section start -->
+    <section id="tugassti" class="tugassti">
+        <div class="row-sti">
+          <div class="col-sm-12">
+            <h2 class="text-center"><span>Tugas </span>STI</h2>
+            <p>Pengumpulan Tugas STI</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4">
+            <a href="Tugas STI/231240001404_Mohammad Farikhin_DB.pdf" class="thumbnail">
+              <img src="img/pdf.jpg" />
+            </a>
+          </div>
+          <div class="col-sm-4">
+            <a href="Tugas STI/231240001404_Mohammad Farikhin_Tugas.pdf" class="thumbnail">
+              <img src="img/pdf.jpg" />
+            </a>
+          </div>
+          <div class="col-sm-4">
+            <a href="Tugas STI/231240001404_Mohammad Farikhin_tugas software.pdf" class="thumbnail">
+              <img src="img/pdf.jpg" />
+            </a>
+          </div>
+          <div class="col-sm-4">
+            <a href="Tugas STI/231240001404_Mohammad Farikhin_DB(belajar mengetik 10 jari ).docx" class="thumbnail">
+              <img src="img/word2.jpg" />
+            </a>
+          </div>
+          <div class="col-sm-4">
+            <a href="Tugas STI/Screenshot (9).png" class="thumbnail">
+              <img src="img/excel3.jpg" />
+            </a>
+          </div>
+          <div class="col-sm-4">
+            <a href="Tugas STI/Screenshot (10).png" class="thumbnail">
+              <img src="img/excel3.jpg" />
+            </a>
+          </div>
+       </div>
+    </section>
+    <!--Tugas STI Section End-->
+
+    <!--Contact Sectiom start-->
+    <section id="contact" class="contact">
+        <h2><span>Hubungi </span>Kami</h2>
+        <p>Untuk Informasi Lebih Lanjut</p>
+        <div class="row">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d37675.13014947693!2d110.40598018679792!3d-6.99629708428583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708b4d3f0d024d%3A0x1e0432b9da5cb9f2!2sKota%20Semarang%2C%20Jawa%20Tengah!5e0!3m2!1sid!2sid!4v1698573851255!5m2!1sid!2sid" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map"></iframe>
+        <form action="">
+          <div class="input-group">
+            <i class="bi bi-person"></i>
+            <input type="text" placeholder="nama">
+          </div>
+           <div class="input-group">
+            <i class="bi bi-envelope"></i>
+            <input type="text" placeholder="email">
+          </div>
+           <div class="input-group">
+            <i class="bi bi-telephone"></i>
+            <input type="text" placeholder="no hp">
+          </div>
+          <button type="submit" class="btn">Kirim Pesan</button>
+        </form>
+        </div>
+    </section>
+    <!--Contact Section End-->
+
+    <!--Footer Start-->
+    <footer>
+      <div class="socials">
+        <a href="https://www.instagram.com/farikhinmopqr_/?next=%2F"><i class="bi bi-instagram"></i></a>
+        <a href="#"><i class="bi bi-twitter-x"></i></a>
+        <a href="#"><i class="bi bi-facebook"></i></a>
+        <a href="#"><i class="bi bi-whatsapp"></i></a>
+        <a href="#"><i class="bi bi-tiktok"></i></a>
+      </div>
+      <div class="links">
+        <a href="#home">HOME</a>
+        <a href="#about">ABOUT</a>
+        <a href="#menu">MENU</a>
+        <a href="#tugassti">STI</a>
+        <a href="#contact">CONTACT</a>
+      </div>
+      <div class="credit">
+        <p>Created by<a href="https://www.instagram.com/farikhinmopqr_/"><i class="glyphicon glyphicon-pushpin"></i>Mohammad Farikhin. | &copy; 2023.</a></p>
+      </div>
+    </footer>
+    <!--Footer End-->
+
+    <!-- Modal Box Item Detail Start-->
+    <div class="modal" id="item-detail-modal">
+      <div class="modal-container">
+        <a href="#" ><i data-feather="x"></i></a>
+        <div class="modal-content">
+          <img src="img/1.jpg" alt="AMERICANO">
+          <div class="product-content">
+            <h3>AMERICANO</h3>
+            <ul>
+              <li>Americano Coffee IDR 25K</li>
+            </ul>
+            <a href="#" ><i class="bi bi-cart4"></i><span> ke keranjang</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal Box Item Detail End-->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/code.jquery.com_jquery-3.7.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js"
+      integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!--Feather icons-->
+    <script>
+      feather.replace();
+    </script>
+    <!--My JavaScript-->
+    <script src="js/Web(KedaiKopi).js"></script>
+  </body>
+</html>

@@ -3,8 +3,8 @@
   src: url(montserrat-alt1/fonts/webfonts/MontserratAlt1-ExtraBold.woff);
 }
 :root {
-  --primary: #b6895b;
-  --bg: #010101;
+  --primary: #239bcf;
+  --bg: rgb(0, 0, 0);
 }
 * {
   margin: 0;
@@ -117,6 +117,19 @@ body {
   color: var(--bg);
 }
 /*shopping cart*/
+#shopping-cart-button {
+  position: relative;
+}
+#shopping-cart-button .quantity-badge {
+  display: inline-block;
+  padding: 1px 5px;
+  background-color: var(--primary);
+  border-radius: 8px;
+  font-size: 1rem;
+  position: absolute;
+  top: 0;
+  right: -12px;
+}
 .shopping-cart {
   position: absolute;
   top: 100%;
@@ -138,27 +151,83 @@ body {
   position: relative;
 }
 .shopping-cart h3 {
-  font-size: 1.6rem;
-  padding-bottom: 0.5rem;
+  font-size: 1.4rem;
 }
 .shopping-cart .item-price {
   font-size: 1.2rem;
 }
-.shopping-cart .cart-item #trash-item {
-  position: absolute;
-  right: 1rem;
+.shopping-cart .cart-item #add,
+.shopping-cart .cart-item #remove {
+  background-color: var(--bg);
+  display: inline-block;
   cursor: pointer;
-}
-.shopping-cart .cart-item #trash-item:hover {
-  color: var(--bg);
+  padding: 2px 5px;
+  margin: 0 8px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 .shopping-cart img {
-  height: 6rem;
+  height: 4rem;
   border-radius: 10px;
   cursor: pointer;
 }
 .shopping-cart.active {
   right: 0;
+}
+.shopping-cart h4 {
+  font-size: 1.6rem;
+  margin-top: -1rem;
+  text-align: center;
+  color: var(--bg);
+}
+/**checkout Form*/
+.form-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-top: 1px double var(--bg);
+  margin-top: 1rem;
+  padding: 1rem;
+}
+.form-container h5 {
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--bg);
+}
+.form-container form {
+  width: 100%;
+  text-align: center;
+}
+.form-container label {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  margin: 1rem 0;
+}
+.form-container span {
+  text-align: right;
+  color: var(--bg);
+}
+.form-container input {
+  background-color: var(--bg);
+  padding: 5px;
+  font-size: 1rem;
+  width: 70%;
+}
+.form-container .checkout-button {
+  padding: 6px 14px;
+  background-color: var(--bg);
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 20px;
+  margin: 1rem auto;
+  cursor: pointer;
+}
+.form-container .checkout-button.disabled {
+  background-color: #999;
+  cursor: not-allowed;
 }
 /*HeroSection*/
 .hero {
@@ -197,7 +266,7 @@ body {
   font-size: 1.8rem;
   margin-top: 1rem;
   line-height: 1.4;
-  font-weight: 100;
+  font-weight: 300;
   text-shadow: 1px 1px 3px white;
   mix-blend-mode: difference;
   color: #fff;
@@ -245,8 +314,9 @@ body {
 .about .row .content p {
   margin-top: 0.8rem;
   font-size: 2rem;
-  font-weight: 100;
+  font-weight: 300;
   line-height: 1.6;
+  color: #fff;
 }
 /*menu section*/
 .menu {
@@ -266,7 +336,7 @@ body {
   max-width: 70rem;
   margin: auto;
   font-size: 2rem;
-  font-weight: 100;
+  font-weight: 300;
   line-height: 1.6;
 }
 .menu .row {
@@ -308,7 +378,7 @@ body {
   max-width: 70rem;
   margin: auto;
   font-size: 2rem;
-  font-weight: 100;
+  font-weight: 300;
   line-height: 1.6;
 }
 .products .row {
@@ -361,6 +431,10 @@ body {
   font-size: 2rem;
   padding: 0.8rem;
 }
+.products .product-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
 /*Tugas STI*/
 .tugassti {
   padding: 10rem 7% 1.4rem;
@@ -379,7 +453,7 @@ body {
   max-width: 70rem;
   margin: auto;
   font-size: 2rem;
-  font-weight: 100;
+  font-weight: 300;
   line-height: 1.6;
 }
 .tugassti .row {
@@ -418,7 +492,7 @@ body {
   max-width: 70rem;
   margin: auto;
   font-size: 2rem;
-  font-weight: 100;
+  font-weight: 300;
   line-height: 1.6;
 }
 .contact .row {
