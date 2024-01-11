@@ -337,6 +337,9 @@ body {
   justify-content: center;
   margin-left: 30rem;
 }
+.card .card-img button {
+  background: #239bcf;
+}
 /*menu section*/
 .menu {
   padding: 8rem 7% 1.4rem;
