@@ -94,19 +94,18 @@ checkoutButton.addEventListener("click", async function (e) {
   // console.log(objData);
   // window.open("http://wa.me/6281215413573?text=" + encodeURIComponent(message));
 
-  // minta transaction token menggunakan ajax/fetch
+  // minta transaction token menggunakan ajax / fetch
   try {
     const response = await fetch("php/placeOrder.php", {
       method: "POST",
       body: data,
     });
     const token = await response.text();
-    console.log(token);
+    window.snap.pay(token);
   } catch (err) {
     console.log(err.message);
   }
 });
-// window.snap.pay('token');
 
 //kirim ke whatsapp
 const formatMessage = (obj) => {
