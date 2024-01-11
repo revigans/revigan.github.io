@@ -277,7 +277,7 @@ body {
   padding: 1rem 3rem;
   font-size: 1.4rem;
   color: #fff;
-  background-color: var(--primary);
+  background: linear-gradient(to right, #448bdb, #44d3e3);
   border-radius: 0.5rem;
   box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
 }
@@ -317,6 +317,25 @@ body {
   font-weight: 300;
   line-height: 1.6;
   color: #fff;
+}
+/* Card Section */
+.card {
+  padding: 8rem 7% 1.4rem;
+  background-color: black;
+}
+.card h2 {
+  text-align: center;
+  font-size: 3.6rem;
+  margin-bottom: 3rem;
+}
+.card h2 span {
+  color: var(--primary);
+}
+.card .card-img img {
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+  margin-left: 30rem;
 }
 /*menu section*/
 .menu {
@@ -456,24 +475,15 @@ body {
   font-weight: 300;
   line-height: 1.6;
 }
-.tugassti .row {
-  border-radius: 15px;
+.tugassti .row .dropdown button {
+  background: linear-gradient(to right, #448bdb, #44d3e3);
+  margin-bottom: 1rem;
+  margin-left: 8.5rem;
+  border: none;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  padding: 0.7rem 0.8rem;
 }
-.tugassti .row .col-sm-4 {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 3rem;
-  justify-content: center;
-}
-.tugassti .row .col-sm-4 {
-  text-align: center;
-  padding-bottom: 1rem;
-}
-.tugassti .row .col-sm-4 a img {
-  width: 200px;
-  margin-right: 8px;
-}
-
 /*Contact Section*/
 .contact {
   padding: 10rem 7% 1.4rem;
@@ -547,6 +557,8 @@ footer {
 }
 footer .socials {
   padding: 1rem 0;
+  cursor: pointer;
+  padding: 0.5rem;
 }
 footer .socials a {
   color: #fff;
@@ -643,7 +655,6 @@ footer .credit a {
     top: 0;
     opacity: 1;
   }
-  
 }
 /* Media Queries */
 /*Laptop*/
@@ -692,7 +703,6 @@ footer .credit a {
   }
   .navbar .search-form {
     width: 90%;
-    
   }
   .about .row {
     flex-wrap: wrap;

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+  
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -27,7 +28,13 @@
 
     <!-- App -->
     <script src="src/app.js" async></script>
+
+    <!-- Midtrans -->
+    <script type="text/javascript"
+      src="https://app.sandbox.midtrans.com/snap/snap.js"
+      data-client-key="SB-Mid-client-yGTu-nhTmg0JRdm4"></script>
   </head>
+
   <body>
     <!--Nav-bar start-->
     <nav class="navbar" x-data>
@@ -37,6 +44,7 @@
       >
       <div class="navbar-nav">
         <a href="#home">HOME <i class="bi bi-house-door-fill"></i></a>
+        <a href="#card">CARD <i class="bi bi-card-text"></i></a>
         <a href="#about">ABOUT <i class="bi bi-archive-fill"></i></a>
         <a href="#menu">MENU <i class="bi bi-cup-hot-fill"></i></a>
         <a href="#products">FAVORITE <i class="bi bi-award-fill"></i></a>
@@ -112,10 +120,19 @@
         <p>
           The First Choice For Exceptional Coffee
         </p>
-        <a href="#" class="cta">Beli Sekarang</a>
+        <a href="#products" class="cta">Beli Sekarang</a>
       </main>
     </section>
     <!--Hero section end-->
+
+    <!-- Card Section start -->
+    <section id="card" class="card">
+      <h2><span>Kartu </span>Ujian</h2>
+        <div class="card-img">
+          <img src="img/kartu ujian UAS.jpeg" class="rounded mx-auto d-block" alt="card">
+        </div>
+    </section>
+    <!-- Card Section end -->
 
     <!--About Section start-->
     <section id="about" class="about">
@@ -139,6 +156,7 @@
       </div>
     </section>
     <!--About Section end-->
+
 
     <!--Menu Section start-->
     <section id="menu" class="menu">
@@ -228,37 +246,164 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-sm-4">
-            <a href="Tugas STI/231240001404_Mohammad Farikhin_DB.pdf" class="thumbnail">
-              <img src="img/pdf.jpg" />
+          <div class="col-xs-6 col-md-3">
+            <a href="#" class="thumbnail">
+              <img src="img/gambar buku.jpg" alt="tugas">
             </a>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">PERTEMUAN 1</button>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                  <li><a class="dropdown-item active" href="Tugas STI/MATERI KE-1 (wecompress.com) (4) (3) (1).ppt">Materi 1</a></li>
+                </ul>
+            </div>
           </div>
-          <div class="col-sm-4">
-            <a href="Tugas STI/231240001404_Mohammad Farikhin_Tugas.pdf" class="thumbnail">
-              <img src="img/pdf.jpg" />
+          <div class="col-xs-6 col-md-3">
+            <a href="#" class="thumbnail">
+              <img src="img/gambar buku.jpg" alt="tugas">
             </a>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">PERTEMUAN 2</button>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                  <li><a class="dropdown-item" href="Tugas STI/MATERI KE-2_2023.ppt">Materi Ke 2</a></li>
+                  <li><a class="dropdown-item" href="Tugas STI/231240001404_Mohammad Farikhin_DB.pdf">Tugas</a></li>
+                  <li><a class="dropdown-item" href="Tugas STI/231240001404_Mohammad Farikhin_Tugas.pdf">Tugas</a></li>
+                  <li><a class="dropdown-item" href="https://www.youtube.com/watch?v=H4absOMmAtc">Materi youtube</a></li>
+                </ul>
+            </div>
           </div>
-          <div class="col-sm-4">
-            <a href="Tugas STI/231240001404_Mohammad Farikhin_tugas software.pdf" class="thumbnail">
-              <img src="img/pdf.jpg" />
+          <div class="col-xs-6 col-md-3">
+            <a href="#" class="thumbnail">
+              <img src="img/gambar buku.jpg" alt="tugas">
             </a>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">PERTEMUAN 3</button>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                  <li><a class="dropdown-item" href="Tugas STI/Pertemuan_3-Perangkat_Lunak_Komputer.ppt">Materi Ke 3</a></li>
+                  <li><a class="dropdown-item" href="Tugas STI/231240001404_Mohammad Farikhin_tugas software.pdf">Latihan Software</a></li>
+                  <li><a class="dropdown-item" href="Tugas STI/LATIHAN SOAL SOFTWARE KE-3.pptx">Soal Latihan Software</a></li>
+                </ul>
+            </div>
           </div>
-          <div class="col-sm-4">
-            <a href="Tugas STI/231240001404_Mohammad Farikhin_DB(belajar mengetik 10 jari ).docx" class="thumbnail">
-              <img src="img/word2.jpg" />
+          <div class="col-xs-6 col-md-3">
+            <a href="#" class="thumbnail">
+              <img src="img/gambar buku.jpg" alt="tugas">
             </a>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">PERTEMUAN 4</button>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                  <li><a class="dropdown-item" href="https://www.youtube.com/watch?v=TZwhoPJLTc0">Materi youtube</a></li>
+                  <li><a class="dropdown-item" href="Tugas STI/MATERI KE-4 10 jari.docx">Materi Ke 4</a></li>
+                  <li><a class="dropdown-item" href="Tugas STI/231240001404_Mohammad Farikhin_DB(belajar mengetik 10 jari ).docx">Tugas</a></li>
+                  <li><a class="dropdown-item" href="Tugas STI/SURAT KARTINI.docx">Teks Surat Kartini</a></li>
+                </ul>
+            </div>
           </div>
-          <div class="col-sm-4">
-            <a href="Tugas STI/Screenshot (9).png" class="thumbnail">
-              <img src="img/excel3.jpg" />
+        </div>
+        <div class="row">
+          <div class="col-xs-6 col-md-3">
+            <a href="#" class="thumbnail">
+              <img src="img/gambar buku.jpg" alt="tugas">
             </a>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">PERTEMUAN 5</button>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                  <li><a class="dropdown-item" href="https://www.youtube.com/watch?v=RwDUzDmWDrM">Materi youtube</a></li>
+                  <li><a class="dropdown-item" href="Tugas STI/MATERI EXEL.pptx">Materi Ke 5</a></li>
+                </ul>
+            </div>
           </div>
-          <div class="col-sm-4">
-            <a href="Tugas STI/Screenshot (10).png" class="thumbnail">
-              <img src="img/excel3.jpg" />
+          <div class="col-xs-6 col-md-3">
+            <a href="#" class="thumbnail">
+              <img src="img/gambar buku.jpg" alt="tugas">
             </a>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">PERTEMUAN 6</button>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                  <li><a class="dropdown-item" href="Tugas STI/SOAL EXEL 2023.pptx">Soal EXEL</a></li>
+                  <li><a class="dropdown-item" href="https://www.youtube.com/watch?v=eR3lAyLEkJI">Contoh Soal EXEL</a></li>
+                  <li><a class="dropdown-item" href="Tugas STI/Screenshot (9).png">Tugas</a></li>
+                  <li><a class="dropdown-item" href="Tugas STI/Screenshot (10).png">Tugas</a></li>
+                </ul>
+            </div>
           </div>
-       </div>
+          <div class="col-xs-6 col-md-3">
+            <a href="#" class="thumbnail">
+              <img src="img/gambar buku.jpg" alt="tugas">
+            </a>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">PERTEMUAN 7</button>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                  <li><a class="dropdown-item" href="https://www.youtube.com/watch?v=MCVkMmYL-aY">Membuat Website</a></li>
+                </ul>
+            </div>
+          </div>
+          <div class="col-xs-6 col-md-3">
+            <a href="#" class="thumbnail">
+              <img src="img/gambar buku.jpg" alt="tugas">
+            </a>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">PERTEMUAN 9</button>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                  <li><a class="dropdown-item" href="https://www.youtube.com/watch?v=W_h7z42GQ08">Materi CMS youtube</a></li>
+                  <li><a class="dropdown-item" href="https://www.youtube.com/watch?v=MIg5XPve7Fs">Materi Wordpress youtube</a></li>
+                </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-6 col-md-3">
+            <a href="#" class="thumbnail">
+              <img src="img/gambar buku.jpg" alt="tugas">
+            </a>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">PERTEMUAN 10</button>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                  <li><a class="dropdown-item" href="https://qwords.com/blog/cara-membuat-wordpress-untuk-pemula/">Materi Wordpress dengan Blog</a></li>
+                  <li><a class="dropdown-item" href="https://wordpress.com/id/gratis/">Situs Wordpress</a></li>
+                  <li><a class="dropdown-item" href="https://farikhin18.000webhostapp.com/">Tugas Wordpress</a></li>
+                </ul>
+            </div>
+          </div>
+          <div class="col-xs-6 col-md-3">
+            <a href="#" class="thumbnail">
+              <img src="img/gambar buku.jpg" alt="tugas">
+            </a>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">PERTEMUAN 11</button>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                  <li><a class="dropdown-item" href="https://id.freepikcompany.com/v2/log-in?client_id=wepik&lang=en">Materi PPT Keren</a></li>
+                  <li><a class="dropdown-item" href="Tugas STI/Mohammad Farikhin_231240001404_compressed_compressed_compressed.pdf">Tugas PPT</a></li>
+                </ul>
+            </div>
+          </div>
+          <div class="col-xs-6 col-md-3">
+            <a href="#" class="thumbnail">
+              <img src="img/gambar buku.jpg" alt="tugas">
+            </a>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">PERTEMUAN 12</button>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                  <li><a class="dropdown-item" href="https://www.dewaweb.com/blog/contoh-database-terpopuler/#2_MySQL">Database DBMS</a></li>
+                  <li><a class="dropdown-item" href="Tugas STI/SEWA CD (2).docx">Contoh DBMS</a></li>
+                  <li><a class="dropdown-item" href="Tugas STI/Farikhin.xlsx">Latihan DBMS</a></li>
+                </ul>
+            </div>
+          </div>
+          <div class="col-xs-6 col-md-3">
+            <a href="#" class="thumbnail">
+              <img src="img/gambar buku.jpg" alt="tugas">
+            </a>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">PERTEMUAN 13 & 14</button>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                  <li><a class="dropdown-item" href="Tugas STI/SIMRS-1.ppt">Materi SIM</a></li>
+                  <li><a class="dropdown-item" href="Tugas STI/MAKALAH SISTEM TEKNOLOGI DAN INFORMASI.pdf">Latihan SIM</a></li>
+                  <li><a class="dropdown-item" href="https://www.slideshare.net/rakhkha/komunikasi-dan-jaringan-komputer-125422189">Materi Jaringan</a></li>
+                  <li><a class="dropdown-item" href="Tugas STI/TUGAS TOPOLOGI MESH.docx">Latihan Topologi Jaringan</a></li>
+                </ul>
+            </div>
+          </div>
+        </div>
     </section>
     <!--Tugas STI Section End-->
 
@@ -290,11 +435,11 @@
     <!--Footer Start-->
     <footer>
       <div class="socials">
-        <a href="https://www.instagram.com/farikhinmopqr_/?next=%2F"><i class="bi bi-instagram"></i></a>
-        <a href="#"><i class="bi bi-twitter-x"></i></a>
-        <a href="#"><i class="bi bi-facebook"></i></a>
-        <a href="#"><i class="bi bi-whatsapp"></i></a>
-        <a href="#"><i class="bi bi-tiktok"></i></a>
+        <a href="https://www.instagram.com/farikhinmopqr_/?next=%2F" ><i class="bi bi-instagram"></i></a>
+        <a href="https://twitter.com/MohammadFarikh5"><i class="bi bi-twitter-x"></i></a>
+        <a href="https://web.facebook.com/mohammad.farikhin.39"><i class="bi bi-facebook"></i></a>
+        <a href="http://wa.me/6281215413573?text="><i class="bi bi-whatsapp"></i></a>
+        <a href="https://www.tiktok.com/@farikhinmopqr_?lang=en"><i class="bi bi-tiktok"></i></a>
       </div>
       <div class="links">
         <a href="#home">HOME</a>

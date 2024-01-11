@@ -1,6 +1,6 @@
 //Toggle class active hamburger menu
 const navbarNav = document.querySelector(".navbar-nav");
-//ketika hamburger menu di klik
+//ketika hamburger-menu di klik
 document.querySelector("#hamburger-menu").onclick = () => {
   navbarNav.classList.toggle("active");
 };
@@ -44,14 +44,14 @@ const itemDetailButtons = document.querySelectorAll(".item-detail-button");
 itemDetailButtons.forEach((btn) => {
   btn.onclick = (e) => {
     itemDetailModal.style.display = "flex";
-    e.preveDefault();
+    e.preventDefault();
   };
 });
 
 //klik tombol case modal
 document.querySelector(".modal .modal-container a").onclick = (e) => {
   itemDetailModal.style.display = "none";
-  e.preveDefault();
+  e.preventDefault();
 };
 //klik di luar modal
 const modal = document.querySelector("#item-detail-modal");
